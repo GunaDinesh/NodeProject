@@ -1,0 +1,48 @@
+<table>
+    <thead>
+      <td>ID</td>
+      <td>Name</td>
+      <td>Quantiy</td>
+      <td>Price</td>
+      <td>Image</td>
+      <td>Actions</td>
+    </thead>
+    <tr *ngFor="let product of products">
+      <td>{{ product._id }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.quantity }}</td>
+      <td>{{ product.price }}</td>
+      <td>{{ product.image }}</td>
+      <td>
+        <button>Edit</button>
+        <button (click)="deleteProduct(product._id)">Delete</button></td>
+    </tr>
+  </table>
+  
+  <form
+    [formGroup]="productForm"
+    (ngSubmit)="addProduct()">
+  
+    <input
+      type="text"
+      formControlName="name">
+    <input
+      type="number"
+      formControlName="price">
+      <input
+      type="number"
+      formControlName="quantity">
+  
+    <textarea formControlName="image"></textarea>
+  
+    <button type="submit">SUBMIT</button>
+  
+  </form>
+  
+  
+  <style>
+    table {
+      border: solid 1px black;
+  
+    }
+  </style>
