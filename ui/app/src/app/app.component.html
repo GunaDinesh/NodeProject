@@ -21,6 +21,26 @@
   </tr>
 </table>
 
+<form
+  [formGroup]="productForm"
+  (ngSubmit)="submitBook()">
+
+  <input
+    type="text"
+    formControlName="name">
+  <input
+    type="number"
+    formControlName="price">
+    <input
+    type="number"
+    formControlName="quantity">
+
+  <textarea formControlName="image"></textarea>
+
+  <button type="submit">SUBMIT</button>
+
+</form>
+
 
 <style>
   table {
